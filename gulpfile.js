@@ -32,10 +32,9 @@ var browserSync = require('browser-sync');
 =========================================================*/
 gulp.task('clear', function(){
     var path = [
-       // './dist/**/*.js',
-      //  './dist/**/*.html',
-      //  './dist/**/*.css'
-       './dist/**/*.*'
+       './dist/**/*.js',
+      './dist/**/*.html',
+      './dist/**/*.css'
         ];
     return del(path);
 });
@@ -123,8 +122,8 @@ gulp.task('build:md5', ['build:html'], function(){
   return gulp.src(path)
     .pipe(md5(10,'./dist/*.html'))  //检索html文件，更改文件中匹配的引用文件，给引用文件加上时间戳
     .pipe(gulpif('*.js', gulp.dest('./dist/js')))   //css文件压缩
-    .pipe(gulpif('*.css', gulp.dest('./dist/css'))); //js文件压缩
-  // .pipe(gulp.dest('./dist/'));
+    .pipe(gulpif('*.css', gulp.dest('./dist/css'))) //js文件压缩
+    .pipe(browserSync.stream());
 });
 /*========================End Step 5=================================*/
 
