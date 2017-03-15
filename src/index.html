@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/custom.css"/>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="static/js/jquery-1.11.3.js"></script>
+</head>
+<body id="index">
+<div class="page1">
+    <div><img src="img/logoh.png" alt=""/></div>
+</div>
+<div class="page2">
+    <div class="header">
+        <div class="nav">
+            <a href="articles.html">文章</a>
+            <a href="#">留言</a>
+            <a href="#">聊天室</a>
+            <a href="#">轻语</a>
+            <a href="#">铭记</a>
+        </div>
+        <p class="cursors"><span>&nbsp;</span></p>
+    </div>
+    <div class="corller">
+        <div class="logo-bg"></div>
+        <div class="logo"><img src="img/logoh.png" alt=""/></div>
+    </div>
+    <div class="content" style="background-image: url(img/3.jpg)">
+        <div><h1>Hello Word</h1></div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    var page_arr = ['.page1', '.page2'];
+ function setBodyHeight(){
+     var win_height = $(window).height();
+     console.log(win_height);
+     $('body').css("height",win_height);
+     $(page_arr[0]).css('display','table');
+     $(page_arr[1]).hide();
+     setTimeout(function(){
+         $(page_arr[0]).hide();
+         $(page_arr[1]).show();
+     }, 1000)
+ }
+$(function(){
+    console.log(123);
+    setBodyHeight();
+    $(window).bind('load resize', function(e){
+        setBodyHeight()
+    });
+
+    $('.header a').mouseover(function(){
+        var _pos = $(this).position();
+        var _a_width = $(this).outerWidth();
+        var _pos_left = _pos.left;
+        var cursors = $('.cursors').children('span');
+        cursors.css({
+            transform: 'translateX(' + _pos_left + 'px)',
+            width : _a_width
+        });
+    }).mouseout(function(e){
+        var tag_class = e.toElement.className;
+        if(tag_class != 'nav'){
+            $('.cursors').children('span').css('transform', 'translateX(0)');
+        }
+        console.log(tag_class);
+
+    })
+});
+</script>
+</body>
+</html>

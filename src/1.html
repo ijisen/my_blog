@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>My Blog</title>
+
+</head>
+<body>
+
+<div class="container">
+    <p style="float: right">1</p>
+    <p style="float: right">2</p>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="static/js/jquery-1.11.3.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="static/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+       // checkStandard();
+        function checkStandard(){
+            var s = document.createElement('script');
+            s.onload = function () {
+                bootlint.showLintReportForCurrentDocument([])
+            };
+            s.src = 'js/bootlint.js';
+            document.body.appendChild(s)
+        }
+    });
+
+</script>
+</body>
+</html>
