@@ -2,7 +2,7 @@ var gulp = require('gulp');
 //删除插件
 var del = require('del');
 //less编译插件
-var less = require('gulp-less');
+//var less = require('gulp-less');
 //html页面压缩插件
 var htmlMin = require('gulp-htmlmin');
 //css压缩插件
@@ -116,17 +116,6 @@ gulp.task('build:html', function(){
         注： html引用文件和目录文件要一致才能匹配上html的引用文件
 =========================================================*/
 gulp.task('build:md5', ['build:html'], function(){
-    var path = [
-        './dist/**/js/*.min.js',  //查找项目中已压缩的js文件
-        './dist/**/css/*.min.css' //查找项目中已压缩的css文件
-    ];
-    return gulp.src(path)
-      .pipe(md5(10,'./dist/*.html'))  //检索html文件，更改文件中匹配的引用文件，给引用文件加上时间戳
-      .pipe(gulp.dest('./dist/'))
-      .pipe(browserSync.stream());
-});
-//'build:md51' == 'build:md5'  效果相同，写法不一样 巧用**过滤目录
-gulp.task('build:md51', ['build:html'], function(){
   var path = [
     './dist/js/*.min.js',  //查找项目中已压缩的js文件
     './dist/css/*.min.css' //查找项目中已压缩的css文件
