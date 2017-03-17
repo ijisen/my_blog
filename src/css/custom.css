@@ -719,10 +719,10 @@ a:hover {
   color: #999;
   text-indent: 20px;
   padding-top: 1px;
-  background: url(../src/img/templatemo_list.png) no-repeat left center;
+  background: url(../img/templatemo_list.png) no-repeat left center;
 }
 .main-wrap .banner_adv > .row ul li a:hover {
-  background: url("../src/img/templatemolist.png") no-repeat 3px center;
+  background: url("../img/templatemolist.png") no-repeat 3px center;
   color: #e90923 !important;
 }
 .main-wrap .banner_adv > .row .hot-label div {

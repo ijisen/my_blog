@@ -75,7 +75,7 @@ var common = (function () {
 
 
 
-(function indexControl(config){
+(function pageControl(config){
   var common = config;
   //common.add();
 
